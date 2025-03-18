@@ -53,4 +53,11 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+<<<<<<< HEAD
 mmit about this project)
+=======
+
+.idea/
+
+SmartWebService.Infra/Migrations/
+>>>>>>> 71ea445 (fix: .gitignore)
