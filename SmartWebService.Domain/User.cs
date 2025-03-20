@@ -8,15 +8,15 @@ public class User
     public Guid Id { get; set; }
     
     [Required]
-    [StringLength(50)]
+    [MaxLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
     public string Name { get; set; }
     
     [Required]
-    [StringLength(50)]
+    [MaxLength(50, ErrorMessage = "Last name cannot be longer than 50 characters.")]
     public string Surname { get; set; }
     
     [Required]
-    [StringLength(100)]
+    [MaxLength(100, ErrorMessage = "Email address cannot be longer than 100 characters.")]
     public string Email { get; set; }
     
     [Required]

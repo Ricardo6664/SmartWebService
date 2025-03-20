@@ -1,17 +1,30 @@
-﻿using SmartWebService.Infra;
+using Microsoft.EntityFrameworkCore;
+using SmartWebService.Bussiness;
+using SmartWebService.Infra;
+using SmartWebService.Infra.Interfaces;
+using SmartWebService.Infra.Repositories;
 
-namespace SmartWebService.Presentation
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DbContextInfra>( options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddControllers();
+builder.Services.AddScoped<IUser, UserService>();
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            UserPersistence userPersistence = new UserPersistence(
-                "Ricardo",
-                "Santos",
-                "ricardo@gmail.com",
-                "123456"
-            );
-        }
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
