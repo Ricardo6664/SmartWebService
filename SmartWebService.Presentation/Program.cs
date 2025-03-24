@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SmartWebService.Bussiness;
+using SmartWebService.Domain;
 using SmartWebService.Infra;
 using SmartWebService.Infra.Interfaces;
 using SmartWebService.Infra.Repositories;
@@ -12,6 +13,8 @@ builder.Services.AddDbContext<DbContextInfra>( options =>
 builder.Services.AddControllers();
 builder.Services.AddScoped<IUser, UserService>();
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<ISecuritySystem, SecuritySystemService>();
+builder.Services.AddScoped<SecuritySystemRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
