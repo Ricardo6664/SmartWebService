@@ -4,12 +4,12 @@ namespace SmartWebService.Infra.Interfaces
 {
     public interface IUser
     {
-        Task<User?> GetUserById(Guid id);
+        Task<User?> GetUserById(int id);
         
         Task<User> AddUser(User user);
         
-        Task<User?> UpdateUser(Guid id, User user);
+        Task<User?> UpdateUser(int id, User user);
         
-        Task<bool> DeleteUser(Guid id);
+        Task<bool> DeleteUser(int id);
     }
 }

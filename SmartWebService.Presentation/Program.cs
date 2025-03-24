@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 using SmartWebService.Bussiness;
 using SmartWebService.Infra;
@@ -29,22 +28,3 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
-=======
-﻿using SmartWebService.Infra;
-
-namespace SmartWebService.Presentation
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            UserPersistence userPersistence = new UserPersistence(
-                "Ricardo",
-                "Santos",
-                "ricardo@gmail.com",
-                "123456"
-            );
-        }
-    }
-}
->>>>>>> origin/main

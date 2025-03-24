@@ -13,7 +13,7 @@ public class UserService : IUser
         _userRepository = userRepository;
     }
     
-    public async Task<User?> GetUserById(Guid id)
+    public async Task<User?> GetUserById(int id)
     {
         return await _userRepository.GetUserById(id);
     }
@@ -24,7 +24,7 @@ public class UserService : IUser
         
     }
 
-    public async Task<User?> UpdateUser(Guid id, User updateUser)
+    public async Task<User?> UpdateUser(int id, User updateUser)
     {
         var user = await _userRepository.GetUserById(id);
         if (user != null)
@@ -34,7 +34,7 @@ public class UserService : IUser
         return null;
     }
 
-    public async Task<bool> DeleteUser(Guid id)
+    public async Task<bool> DeleteUser(int id)
     {
         return await _userRepository.DeleteUser(id);
     }

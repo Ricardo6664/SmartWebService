@@ -4,7 +4,14 @@ namespace SmartWebService.Infra;
 
 public class UserPersistence
 {
-    public UserPersistence(string firstName, string surname, string email, string password)
+    private readonly DbContextInfra _context;
+
+    public UserPersistence(DbContextInfra context)
+    {
+        _context = context;
+    }
+
+    public void CreateUser(string firstName, string surname, string email, string password)
     {
         var user = new User
         {
@@ -14,11 +21,8 @@ public class UserPersistence
             Password = password
         };
 
-        using (var context = new DbContextInfra())
-        {
-            context.Users.Add(user);
-            context.SaveChanges();
-            Console.WriteLine("User created!");
-        }
+        _context.Users.Add(user);
+        _context.SaveChanges();
+        Console.WriteLine("User created!");
     }
 }

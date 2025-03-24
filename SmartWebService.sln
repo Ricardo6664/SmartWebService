@@ -4,13 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWebService.Infra", "Sm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWebService.Domain", "SmartWebService.Domain\SmartWebService.Domain.csproj", "{45857848-F21E-4205-9532-EA33A45356BB}"
 EndProject
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWebService.Presentation", "SmartWebService.Presentation\SmartWebService.Presentation.csproj", "{5004CCD3-5C70-4A3C-A424-4BB206B4924A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWebService.Bussiness", "SmartWebService.Bussiness\SmartWebService.Bussiness.csproj", "{FDCF7FF0-DE3C-4362-BB18-FF97F1994EF7}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWebService.Presentation", "SmartWebService.Presentation\SmartWebService.Presentation.csproj", "{E794139E-4DB6-48A7-9AF0-BCA2D86AB598}"
->>>>>>> origin/main
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,7 +22,6 @@ Global
 		{45857848-F21E-4205-9532-EA33A45356BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45857848-F21E-4205-9532-EA33A45356BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45857848-F21E-4205-9532-EA33A45356BB}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{5004CCD3-5C70-4A3C-A424-4BB206B4924A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5004CCD3-5C70-4A3C-A424-4BB206B4924A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5004CCD3-5C70-4A3C-A424-4BB206B4924A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,11 +30,5 @@ Global
 		{FDCF7FF0-DE3C-4362-BB18-FF97F1994EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDCF7FF0-DE3C-4362-BB18-FF97F1994EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDCF7FF0-DE3C-4362-BB18-FF97F1994EF7}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
-		{E794139E-4DB6-48A7-9AF0-BCA2D86AB598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E794139E-4DB6-48A7-9AF0-BCA2D86AB598}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E794139E-4DB6-48A7-9AF0-BCA2D86AB598}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E794139E-4DB6-48A7-9AF0-BCA2D86AB598}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> origin/main
 	EndGlobalSection
 EndGlobal

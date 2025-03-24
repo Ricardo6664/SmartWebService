@@ -9,13 +9,13 @@ namespace SmartWebService.Infra.Repositories
     {
         public async Task<User> AddUser(User user)
         {
-            string passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.Password = passwordHash;
             await context.Set<User>().AddAsync(user);
             await context.SaveChangesAsync();
             return user;
         }
-        public async Task<bool> DeleteUser(Guid id)
+        public async Task<bool> DeleteUser(int id)
         {
             var user = await context.Set<User>().FirstOrDefaultAsync(u => u.Id == id);
             if (user == null) return false;
@@ -24,11 +24,11 @@ namespace SmartWebService.Infra.Repositories
             await context.SaveChangesAsync();
             return true;
         }
-        public async Task<User?> GetUserById(Guid id)
+        public async Task<User?> GetUserById(int id)
         {
             return await context.Set<User>().FirstOrDefaultAsync(u => u.Id == id);
         }
-        public async Task<User?> UpdateUser(Guid id, User user)
+        public async Task<User?> UpdateUser(int id, User user)
         {
             var existingUser = await context.Set<User>().FirstOrDefaultAsync(u => u.Id == id);
             if (existingUser == null) return null;
