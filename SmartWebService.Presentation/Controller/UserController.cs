@@ -18,8 +18,8 @@ public class UserController : ControllerBase
     }
 
     // GET: api/user/{id}
-    [HttpGet("{id:guid}")]
-    public async Task<ActionResult<User>> GetUser(Guid id)
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<User>> GetUser(int id)
     {
         var user = await _userService.GetUserById(id);
         if (user == null)
@@ -27,8 +27,8 @@ public class UserController : ControllerBase
         return user;
     }
 
-    [HttpPut("{id:guid}")]
-    public async Task<IActionResult> UpdateUser(Guid id, [FromBody] User updateUser)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateUser(int id, [FromBody] User updateUser)
     {
         var user = await _userService.UpdateUser(id, updateUser);
         if (user == null) return NotFound(new { message = "User not found." });
@@ -45,8 +45,8 @@ public class UserController : ControllerBase
     }
 
     // DELETE: api/user/{id}
-    [HttpDelete("{id:guid}")]
-    public async Task<ActionResult> DeleteUser(Guid id)
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> DeleteUser(int id)
     {
         var result = await _userService.DeleteUser(id);
         if (result)
